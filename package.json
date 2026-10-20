@@ -29,11 +29,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VICqiufeeng/dsh-minimax-connect.git"
+    "url": "git+https://github.com/Fonna/dsh-minimax-connect.git"
   },
-  "homepage": "https://github.com/VICqiufeeng/dsh-minimax-connect#readme",
+  "homepage": "https://github.com/Fonna/dsh-minimax-connect#readme",
   "bugs": {
-    "url": "https://github.com/VICqiufeeng/dsh-minimax-connect/issues"
+    "url": "https://github.com/Fonna/dsh-minimax-connect/issues"
   },
   "keywords": [
     "deepseek-harness",

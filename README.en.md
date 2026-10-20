@@ -12,7 +12,13 @@ This build targets **DSH 0.2.1-rc.2 only**, on Node `^22.19.0 || >=24.0.0`. It u
 
 Sign in to domestic MiniMax Code on the host first. The default credential is `~/.minimax/auth/prod/cn/mcode-public/auth.json`; no credentials are included in this repository or its package.
 
-Using the upgraded host CLI and the actual service's DSH_HOME:
+Using the upgraded host CLI and the actual service's DSH_HOME, install the stable fork tag directly from GitHub:
+
+```sh
+dsh plugin --profile web add https://github.com/Fonna/dsh-minimax-connect.git#v0.1.0-dsh021rc2.4 --save-exact
+```
+
+Alternatively, install a downloaded local tgz:
 
 ```sh
 dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.4.tgz

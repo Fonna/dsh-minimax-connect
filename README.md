@@ -40,7 +40,13 @@ Windows 另行验证原子创建与替换、锁检查与释放、失败写入清
 
 ## 安装
 
-先准备 DSH **0.2.1-rc.2** 的宿主环境，再在其 Web profile 中安装本包；可使用 DSH 的插件管理器或该版本的 CLI：
+先准备 DSH **0.2.1-rc.2** 的宿主环境，再在其 Web profile 中安装本包。公开 fork 提供稳定标签，可直接从 GitHub 安装：
+
+```sh
+dsh plugin --profile web add https://github.com/Fonna/dsh-minimax-connect.git#v0.1.0-dsh021rc2.4 --save-exact
+```
+
+也可以下载源码或 Release 归档后使用本地 tgz：
 
 ```sh
 dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.4.tgz
