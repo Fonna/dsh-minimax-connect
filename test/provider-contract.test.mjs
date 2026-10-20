@@ -39,6 +39,29 @@ custom_provider:
   }
 });
 
+test('missing config falls back to the current formal MiniMax Flash model', () => {
+  const missing = join(tmpdir(), `minimax-roster-missing-${Date.now()}.yaml`);
+  const { models, source } = __diagnostics.parseModels(missing);
+  assert.equal(source, 'fallback (config.yaml unreadable)');
+  assert.equal(models[0].id, 'MiniMax-M3.1-Flash');
+  assert.equal(models[0].name, 'M3.1-Flash');
+  assert.ok(models.every(model => !model.id.includes('Preview')));
+});
+
+test('stale Preview entries in config are excluded from the advertised roster', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'minimax-preview-filter-test-'));
+  const config = join(dir, 'config.yaml');
+  try {
+    writeFileSync(config, `provider:\n  minimax:\n    models:\n      MiniMax-M3.1-Flash-Preview:\n        name: M3.1 Flash Preview\n      MiniMax-M3.1-Flash:\n        name: M3.1-Flash\n`);
+    const { models, source } = __diagnostics.parseModels(config);
+    assert.equal(source, 'config.yaml');
+    assert.deepEqual(models.map(model => model.id), ['MiniMax-M3.1-Flash']);
+    assert.ok(models.every(model => !/-preview$/i.test(model.id)));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 test('maximum context never exceeds the declared window unless expansion is explicitly offered', () => {
   const dir = mkdtempSync(join(tmpdir(), 'minimax-context-test-'));
   const config = join(dir, 'config.yaml');

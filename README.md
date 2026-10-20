@@ -1,6 +1,6 @@
 # MiniMax Code 接入 DSH 0.2.1-rc.2
 
-适配版 `0.1.0-dsh021rc2.3`，基于 [VICqiufeeng/dsh-minimax-connect](https://github.com/VICqiufeeng/dsh-minimax-connect) 的提交 `8c927d79d1ac09b384b48fd350783ec8cdb9e01e`。原作者 VICqiufeeng，许可证 MIT。
+适配版 `0.1.0-dsh021rc2.4`，基于 [VICqiufeeng/dsh-minimax-connect](https://github.com/VICqiufeeng/dsh-minimax-connect) 的提交 `8c927d79d1ac09b384b48fd350783ec8cdb9e01e`。原作者 VICqiufeeng，许可证 MIT。
 
 ## 适配内容
 
@@ -34,7 +34,7 @@ Windows 另行验证原子创建与替换、锁检查与释放、失败写入清
 
 ## 模型目录和登录
 
-插件优先读取 MiniMax Code 的 `~/.minimax/config.yaml` 中 `provider.minimax.models`，不会混入自定义服务商。没有可读配置文件时使用随包内置的 4 个模型目录，并在页面标注 fallback；这不是从服务端动态枚举全部可用模型。
+插件优先读取 MiniMax Code 的 `~/.minimax/config.yaml` 中 `provider.minimax.models`，不会混入自定义服务商。没有可读配置文件时使用随包内置的 4 个模型目录，其中 Flash 使用正式模型 ID `MiniMax-M3.1-Flash`，并在页面标注 fallback；这不是从服务端动态枚举全部可用模型。
 
 默认登录文件为 `~/.minimax/auth/prod/cn/mcode-public/auth.json`。需先在运行 DSH 的机器上登录国内 MiniMax Code 账号；安装包和源码不包含登录凭据。
 
@@ -43,7 +43,7 @@ Windows 另行验证原子创建与替换、锁检查与释放、失败写入清
 先准备 DSH **0.2.1-rc.2** 的宿主环境，再在其 Web profile 中安装本包；可使用 DSH 的插件管理器或该版本的 CLI：
 
 ```sh
-dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.3.tgz
+dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.4.tgz
 ```
 
 CLI 的 `add` 只添加依赖。首次安装还需在该 profile 的 `package.json` → `dsh.profile.bundles` 数组中追加 `"dsh-minimax-connect"`，保留原有条目；已经启用旧版的 profile 无需重复追加。

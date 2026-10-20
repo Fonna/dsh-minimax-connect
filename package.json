@@ -2,7 +2,7 @@
   "name": "dsh-minimax-connect",
   "displayName": "DSH Connect MiniMax",
   "description": "Use the MiniMax Code (Mavis) subscription already signed in on this machine as a DSH model provider, with self-renewing credentials, a points panel and daily check-in.",
-  "version": "0.1.0-dsh021rc2.3",
+  "version": "0.1.0-dsh021rc2.4",
   "author": "VICqiufeeng",
   "type": "module",
   "engines": {

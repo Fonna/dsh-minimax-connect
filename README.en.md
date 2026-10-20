@@ -2,7 +2,7 @@
 
 [中文](README.md)
 
-Compatibility build `0.1.0-dsh021rc2.3`, based on upstream commit `8c927d79d1ac09b384b48fd350783ec8cdb9e01e`. Original author: VICqiufeeng. MIT licensed; see LICENSE.
+Compatibility build `0.1.0-dsh021rc2.4`, based on upstream commit `8c927d79d1ac09b384b48fd350783ec8cdb9e01e`. Original author: VICqiufeeng. MIT licensed; see LICENSE.
 
 The plugin reuses the domestic MiniMax Code account signed in on the machine running DSH. It provides an Anthropic Messages model adapter, a points/check-in panel and model preferences. No separate proxy process is required.
 
@@ -15,7 +15,7 @@ Sign in to domestic MiniMax Code on the host first. The default credential is `~
 Using the upgraded host CLI and the actual service's DSH_HOME:
 
 ```sh
-dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.3.tgz
+dsh plugin --profile web add /absolute/path/dsh-minimax-connect-0.1.0-dsh021rc2.4.tgz
 ```
 
 The CLI adds the dependency only. On first installation, append `"dsh-minimax-connect"` to `dsh.profile.bundles` in that profile's package.json, keeping its other entries. Restart DSH and refresh the browser. Existing enabled installations do not need another bundle entry.
